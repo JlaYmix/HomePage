@@ -1,0 +1,73 @@
+@font-face {
+    font-family: 'RobotoSlab-Thin';
+    src: url('../fonts/Roboto_Slab/RobotoSlab-Thin.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoSlab-ExtraLight';
+    src: url('../fonts/Roboto_Slab/RobotoSlab-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoSlab-Light';
+    src: url('../fonts/Roboto_Slab/RobotoSlab-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoSlab-Regular';
+    src: url('../fonts/Roboto_Slab/RobotoSlab-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoSlab-Medium';
+    src: url('../fonts/Roboto_Slab/RobotoSlab-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoSlab-SemiBold';
+    src: url('../fonts/Roboto_Slab/RobotoSlab-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoSlab-Bold';
+    src: url('../fonts/Roboto_Slab/RobotoSlab-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoSlab-ExtraBold';
+    src: url('../fonts/Roboto_Slab/RobotoSlab-ExtraBold.ttf') format('truetype');
+    font-weight: 800;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'RobotoSlab-Black';
+    src: url('../fonts/Roboto_Slab/RobotoSlab-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+:root {
+    --color-list: #324950;
+}
+
+body {
+    background-image: url('../imgs/bg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
