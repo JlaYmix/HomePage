@@ -68,8 +68,11 @@
 }
 
 body {
-    background-image: url('../imgs/bg.svg');
+    background-image: url('../imgs/bg/bg.svg');
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
+
+    padding: 0;
+    margin: 0;
 }
