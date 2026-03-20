@@ -1,0 +1,25 @@
+.container-footer-header {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: auto;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 20px;
+    color: var(--color-list);
+}
