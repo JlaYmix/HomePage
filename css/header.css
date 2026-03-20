@@ -17,6 +17,11 @@
     width: 500px;
 }
 
+.search-wrapper {
+    position: relative;
+    width: 67.8%;
+}
+
 ul.list {
     color: var(--color-list);
     font-family: 'RobotoSlab-Medium';
@@ -37,11 +42,6 @@ input[type="text"] {
     font-family: 'RobotoSlab-Regular';
 }
 
-.search-wrapper {
-    position: relative;
-    width: 67.8%;
-}
-
 .w3-border {
     width: 100%;
     border: none;
@@ -54,9 +54,8 @@ input[type="text"] {
     position: absolute;
     right: 0;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translateY(-70%);
     
-    margin: 2px;
     width: 18px;
     height: 18px;
 }
