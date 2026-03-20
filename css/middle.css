@@ -1,4 +1,4 @@
-.container-main {
+.hero {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -9,4 +9,46 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.hero-title {
+    font-family: "RobotoSlab-Bold"; 
+    font-size: 48px; 
+    color: var(--color-p); 
+    margin-bottom: 50px;
+}
+
+.hero-btn {
+    font-family: "RobotoSlab-Medium"; 
+    font-size: 16px; 
+    color: white; 
+    background-color: var(--color-button); 
+    border: none; 
+    padding: 16px 31px 16px 31px;
+}
+
+.container-footer-header {
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+
+.footer-wrapper {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: auto;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 20px;
+    color: var(--color-list);
 }
