@@ -290,12 +290,6 @@ h1 {
     margin-bottom: 50px;
 }
 
-.center-article {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
 .article-card h2 {
     font-family: 'RobotoSlab-Bold';
     color: #57984C;
@@ -312,4 +306,10 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+}
+
+.center-article {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
