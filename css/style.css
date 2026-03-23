@@ -67,7 +67,7 @@
     --color-button: #57984C;
 }
 
-body {
+.body-homepage {
     background-image: url('../imgs/bg/bg.svg');
     background-size: cover;
     background-repeat: no-repeat;
@@ -75,4 +75,11 @@ body {
 
     padding: 0;
     margin: 0;
+}
+
+.body-tomatoall {
+    background-image: url('../imgs/bg/image\ 7.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
 }
