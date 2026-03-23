@@ -130,7 +130,7 @@ h1 {
     display: flex;
     justify-content: center;
     gap: 5px;
-    margin-bottom: 30px; /* было 100px */
+    margin-bottom: 30px;
 }
 
 .activities-wrapper {
@@ -163,14 +163,14 @@ h1 {
 .activity-item h4 {
     color: #4a7c3f;
     font-family: 'RobotoSlab-Bold';
-    font-size: 16px; /* было 24px — исправь */
+    font-size: 16px;
     margin-bottom: 12px;
 }
 
 .activity-item p {
     color: #555;
     font-family: 'RobotoSlab-Regular';
-    font-size: 14px; /* было 18px — исправь */
+    font-size: 14px;
     line-height: 1.6;
     text-align: center;
 }
