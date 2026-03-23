@@ -282,7 +282,7 @@ h1 {
 }
 
 .tomato-main {
-    max-width: 1150px;
+    max-width: 1200px;
     margin: 48px auto;
 }
 
@@ -290,15 +290,13 @@ h1 {
     margin-bottom: 50px;
 }
 
-.article-card {
-    display: inline-block;
+.center-article {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 
 .article-card h2 {
-    display: flex;
-    justify-content: center;
-
-    align-items: center;
     font-family: 'RobotoSlab-Bold';
     color: #57984C;
     font-size: 20px;
