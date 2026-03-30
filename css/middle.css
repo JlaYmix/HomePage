@@ -430,7 +430,124 @@ li {
     height: 25px;
 }
 
-.left-col {
+.left-col { 
     width: 55.8%;
     padding-left: 21%;
+}
+
+/* Contact Us */
+
+.tag {
+    display: flex;
+    align-items: flex-start;
+    padding: 2rem 3rem;
+}
+
+.form-right-col {
+    display: flex;
+    flex-direction: column;
+    margin-top: 130px;
+}
+
+.tag section h1 {
+    font-size: 0.95rem;
+    color: var(--color-list);
+    margin-bottom: 0.25rem;
+}
+
+.tag section input[type="text"] {
+    display: block;
+    width: 300px;
+    padding: 6px 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 0.75rem;
+    border-radius: 5px;
+}
+
+.tag-input section input[type="text"] {
+    display: block;
+    width: 500px;
+    padding: 6px 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 0.75rem;
+    border-radius: 5px;
+}
+
+.tag section button {
+    padding: 5px 14px;
+    background: #fff;
+    border: 1px solid #aaa;
+    cursor: pointer;
+}
+
+.tag img {
+    margin: 2rem 0 2rem;
+}
+
+.tag h2 {
+    color: var(--color-list);
+    font-size: 44px;
+    font-family: 'RobotoSlab-Bold';
+}
+
+.tag-input section select,
+.tag-input section textarea {
+    display: block;
+    width: 500px;
+    padding: 6px 5px;
+    border: 1px solid #ccc;
+    margin-bottom: 0.75rem;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    color: var(--color-list);
+}
+
+.captcha-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.captcha-wrapper input[type="text"] {
+    width: 180px !important;
+    margin-bottom: 0 !important;
+}
+
+.tag section button {
+    font-family: 'RobotoSlab-Regular';
+    padding: 10px 50px;
+    background: #57984C;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.adress-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.adress-row h3 {
+    color: #57984C;
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.adress-row hr {
+    width: 150px;
+    border-top: 1px solid #57984C;
+    margin-bottom: 1rem;
+}
+
+.adress-row p {
+    color: var(--color-list);
+    font-size: 0.95rem;
+    line-height: 1.7;
 }
