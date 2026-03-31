@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="./css/middle.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/style.css">
+
+    <link rel="stylesheet" href="./css/responsive.css">
 </head>
 <body class="body-homepage">
 <header class="container">
@@ -20,13 +22,15 @@
             <a href="./index.html"><img src="./imgs/icons/Logo.svg" alt="logo"></a>
         </div>
 
+        <button class="burger" id="burgerBtn">☰</button>
+
         <div class="right-block">
             <div class="search-wrapper">
                 <input class="w3-border" type="text" placeholder="Search">
                 <img src="./imgs/icons/ico_search.svg" class="ico-style" alt="search">
             </div>
 
-            <ul class="list">
+            <ul class="list" id="navMenu">
                 <a href="./index.html"><li>Home</li></a>
                 <a href=""><li>Company Profile</li></a>
                 <a href="./TomatoAll.html"><li>Products</li></a>
@@ -192,6 +196,22 @@
         <p>AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</p>
     </div>
 </footer>
+
+<script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    burgerBtn.addEventListener('click', function() {
+        navMenu.classList.toggle('open');
+    });
+
+    const menuLinks = navMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('open');
+        });
+    });
+</script>
 
 </body>
 </html>
