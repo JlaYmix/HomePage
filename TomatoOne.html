@@ -13,6 +13,8 @@
     <link rel="stylesheet" href="./css/style.css">
     
     <link rel="stylesheet" href="./css/responsive.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <body>
 <header class="container shadow-box">
@@ -42,16 +44,16 @@
         </div>
     </div>
 </header>
-<main>
+<main id="app">
     <section class="tag1002">
         <div class="top-block d-flex">
             <div class="left-col tag809">
                 <div class="breadcrumbs">
-                    <a href="./TomatoAll.html">← Return to all tomatoes</a>
+                    <a href="./TomatoAll.html">← Return to all products</a>
                 </div>
-                
-                <h1>TAG 1002 (TAG 809)</h1>
-                <h1 style="color: #57984C;">Tomato Determinate <br> Red Standard Round</h1>
+
+                <h1>{{ product.title }}</h1>
+                <h1 style="color: #57984C;">{{ product.short_text }}</h1>
                 <img src="./imgs/logos/Union.svg" alt="stars">
 
                 <div class="d-flex align-items-center yield">
@@ -62,70 +64,32 @@
                 <section class="characteristics">
                     <h4>CHARACTERISTICS</h4>
                     <hr>
-                    <strong>Resistance</strong>
-                    <p>HR: ToMV:0-2; Fol: 1,2; Ve/Vd;<br>IR: TYLCV</p>
+                    <p>{{ product.desc }}</p>
                 </section>
 
-                <div class="row tomato">
-                    <div class="col-6">
-                        <section class="plant">
-                            <h4>Plant</h4>
-                            <hr>
-                            <ul>
-                                <li>Strong vigor that provides good leaf coverage.</li>
-                                <li>Very high productivity with good fruit setting.</li>
-                                <li>Early matured variety.</li>
-                            </ul>
-                        </section>
-                    </div>
-                </div>
-
-                <div class="row tomato">
-                    <div class="col-6">
-                        <section class="fruit">
-                            <h4>Fruit</h4>
-                            <hr>
-                            <ul>
-                                <li>Long shelf life on plant and post harvest.</li>
-                                <li>Nice shiny attractive deep red color.</li>
-                                <li>Average fruit size: 140 – 160 grams.</li>
-                            </ul>
-                        </section>
-                    </div>
-                </div>
             </div>
 
             <div class="right-col tomatoP">
-                <img src="./imgs/icons/image 3.jpg" alt="tomato photo" class="main-photo">
+                <img :src="'./' + product.image" :alt="product.title" class="main-photo">
+
                 <div class="text-right mt-5 start">
-                    <a href="#" class="btn-download gap">
-                        <img src="./imgs/icons/ico_pdf.png" alt="pdf">Download PDF
+
+                    <a class="pdf btn-download" href="#"
+                       @click.prevent="addToCart(product.id)"
+                       v-if="btnVisible == 0">
+                        Add to cart
                     </a>
-                </div>
 
-                <div class="wrapper-cycle-tomato">
-                    <section class="cycle tomato">
-                        <h4>Cycle</h4>
-                        <hr>
-                        <ul>
-                            <li>Spring</li>
-                            <li>Fall</li>
-                            <li>Winter</li>
-                        </ul>
-                    </section>
-
-                    <section class="color tomato mt">
-                        <h4>Color</h4>
-                        <hr>
-                        <ul>
-                            <li>Red</li>
-                        </ul>
-                    </section>
+                    <a class="pdf btn-download" href="./ContactUs.html"
+                       v-if="btnVisible == 1">
+                        Go to cart
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 </main>
+
 <footer>
     <div class="footer-container">
         <div class="footer-top">
@@ -167,6 +131,6 @@
         });
     });
 </script>
-
+<script src="./js/main.js"></script>
 </body>
 </html>
