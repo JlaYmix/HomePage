@@ -78,8 +78,11 @@
 }
 
 .body-tomatoall {
-    background-image: url('../imgs/bg/image\ 7.svg');
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
+}
+
+.body-tomato {
+    background-color: #e8f5e9;
 }
