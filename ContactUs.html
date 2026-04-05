@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact us</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/middle.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/responsive.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <header class="container shadow-box">
+        <div class="container-block">
+
+            <div class="logo">
+                <a href="./index.html"><img src="./imgs/icons/Logo.svg" alt="logo"></a>
+            </div>
+
+            <button class="burger" id="burgerBtn">☰</button>
+
+            <div class="right-block">
+                <div class="search-wrapper">
+                    <input class="w3-border" type="text" placeholder="Search">
+                    <img src="./imgs/icons/ico_search.svg" class="ico-style" alt="search">
+                </div>
+
+                <ul class="list" id="navMenu">
+                    <a href="./index.html"><li>Home</li></a>
+                    <a href=""><li>Company Profile</li></a>
+                    <a href="./TomatoAll.html"><li>Products</li></a>
+                    <a href=""><li>Services</li></a>
+                    <a href=""><li>R & D</li></a>
+                    <a href="./ContactUs.html"><li>Contact</li></a>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <img class="body-tomatoall" src="./imgs/bg/image 7.jpg" alt="">
+
+    <main>
+
+        <section class="cart-section">
+            <h3>Your Cart</h3>
+            <p v-if="cart.length === 0" class="cart-empty">No items in your cart.</p>
+            <table v-else class="cart-table">
+                <thead>
+                    <tr>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="item in cart" :key="item.id">
+                        <td><img class="cart-thumb" :src="item.image" :alt="item.title"></td>
+                        <td><div class="cart-item-name">{{ item.title }}</div></td>
+                        <td><div class="cart-item-desc">{{ item.short_text }}</div></td>
+                        <td><button class="btn-remove" @click="removeFromCart(item.id)">✕</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div v-if="orderSubmitted" class="order-success">
+            <h2>Thank you!</h2>
+            <p>Your message has been sent. We will contact you shortly.</p>
+            <div class="order-summary">
+                <p><strong>Name:</strong> {{ submittedData.name }}</p>
+                <p><strong>Company Name:</strong> {{ submittedData.companyName }}</p>
+                <p><strong>Position:</strong> {{ submittedData.position }}</p>
+                <p><strong>City:</strong> {{ submittedData.city }}</p>
+                <p><strong>Country:</strong> {{ submittedData.country }}</p>
+                <p><strong>Telephone:</strong> {{ submittedData.telephone }}</p>
+                <p><strong>Email:</strong> {{ submittedData.email }}</p>
+                <p><strong>You are a:</strong> {{ submittedData.youAre }}</p>
+                <p><strong>Interested in:</strong> {{ submittedData.interest }}</p>
+            </div>
+        </div>
+
+        <form class="tag" v-else @submit.prevent="makeOrder">
+            <div class="left-col">
+                <h2>Contact us</h2>
+                <img src="./imgs/logos/Union.svg" alt="stars">
+
+                <section>
+                    <h1>Name*</h1>
+                    <input type="text" v-model="contactFields.name" required>
+                </section>
+
+                <section>
+                    <h1>Company Name</h1>
+                    <input type="text" v-model="contactFields.companyName">
+                </section>
+
+                <section>
+                    <h1>Position</h1>
+                    <input type="text" v-model="contactFields.position">
+                </section>
+
+                <section>
+                    <h1>City</h1>
+                    <input type="text" v-model="contactFields.city">
+                </section>
+
+                <section>
+                    <h1>Country</h1>
+                    <input type="text" v-model="contactFields.country">
+                </section>
+
+                <section>
+                    <h1>Telephone</h1>
+                    <input type="text" v-model="contactFields.telephone">
+                </section>
+
+                <section>
+                    <h1>Email*</h1>
+                    <input type="email" v-model="contactFields.email" required>
+                </section>
+            </div>
+
+            <div class="form-right-col tag-input">
+                <section>
+                    <h1>You are a</h1>
+                    <select v-model="contactFields.youAre">
+                        <option value="seed_producer">seed producer</option>
+                        <option value="farmer">farmer</option>
+                        <option value="distributor">distributor</option>
+                        <option value="other">other</option>
+                    </select>
+                </section>
+
+                <section>
+                    <h1>If other, please specify</h1>
+                    <input type="text" v-model="contactFields.otherSpecify">
+                </section>
+
+                <section>
+                    <h1>You are interested in</h1>
+                    <textarea rows="7" v-model="contactFields.interest"></textarea>
+                </section>
+
+                <section class="captcha-row">
+                    <h1>Please type this code</h1>
+                    <div class="captcha-wrapper">
+                        <img src="./imgs/icons/image 12.png" alt="captcha code">
+                        <input type="text" v-model="contactFields.captcha">
+                        <button type="submit">Send Message</button>
+                    </div>
+                </section>
+            </div>
+        </form>
+
+        <section class="adress-row">
+            <h3>Our Adress</h3>
+            <hr>
+            <div>
+                <p>
+                    AGRIDERA Seeds & Agriculture Ltd.<br>
+                    P.O Box 103,<br>
+                    Gedera 70750, Israel.<br>
+                    Telephone: <span class="phone">+972 8 944 9222</span>
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-top">
+                <ul class="footer-nav">
+                    <li>Profile</li>
+                    <li>Management</li>
+                    <li>Products</li>
+                    <li>R&D</li>
+                    <li>Links</li>
+                    <li>Sitemap</li>
+                    <li>Contact</li>
+                </ul>
+                <div class="footer-social">
+                    <img src="./imgs/icons/Ico_in.png" alt="LinkedIn">
+                    <img src="./imgs/icons/Ico_inst.png" alt="Instagram">
+                    <img src="./imgs/icons/Ico_tube.png" alt="YouTube">
+                    <img src="./imgs/icons/Ico_tw.png" alt="Twitter">
+                    <img src="./imgs/icons/Ico_fb.png" alt="Facebook">
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</p>
+        </div>
+    </footer>
+
+</div>
+
+<script src="./js/main.js"></script>
+
+<script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    burgerBtn.addEventListener('click', function() {
+        navMenu.classList.toggle('open');
+    });
+
+    const menuLinks = navMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('open');
+        });
+    });
+</script>
+
+</body>
+</html>
