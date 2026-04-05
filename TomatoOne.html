@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomato One</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/middle.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/style.css">
+    
+    <link rel="stylesheet" href="./css/responsive.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+<header class="container shadow-box">
+    <div class="container-block">
+
+        <!-- LOGO -->
+        <div class="logo">
+            <a href="./index.html"><img src="./imgs/icons/Logo.svg" alt="logo"></a>
+        </div>
+
+        <button class="burger" id="burgerBtn">☰</button>
+
+        <div class="right-block">
+            <div class="search-wrapper">
+                <input class="w3-border" type="text" placeholder="Search">
+                <img src="./imgs/icons/ico_search.svg" class="ico-style" alt="search">
+            </div>
+
+            <ul class="list" id="navMenu">
+                <a href="./index.html"><li>Home</li></a>
+                <a href=""><li>Company Profile</li></a>
+                <a href="./TomatoAll.html"><li>Products</li></a>
+                <a href=""><li>Services</li></a>
+                <a href=""><li>R & D</li></a>
+                <a href="./ContactUs.html"><li>Contact</li></a>
+            </ul>
+        </div>
+    </div>
+</header>
+<main id="app">
+    <section class="tag1002">
+        <div class="top-block d-flex">
+            <div class="left-col tag809">
+                <div class="breadcrumbs">
+                    <a href="./TomatoAll.html">← Return to all products</a>
+                </div>
+
+                <h1>{{ product.title }}</h1>
+                <h1 style="color: #57984C;">{{ product.short_text }}</h1>
+                <img src="./imgs/logos/Union.svg" alt="stars">
+
+                <div class="d-flex align-items-center yield">
+                    <img src="./imgs/icons/Group 17.svg" alt="icon">
+                    <p>Very high yield and <br> excellent fruits quality!</p>
+                </div>
+
+                <section class="characteristics">
+                    <h4>CHARACTERISTICS</h4>
+                    <hr>
+                    <p>{{ product.desc }}</p>
+                </section>
+
+            </div>
+
+            <div class="right-col tomatoP">
+                <img :src="'./' + product.image" :alt="product.title" class="main-photo">
+
+                <div class="text-right mt-5 start">
+
+                    <a class="pdf btn-download" href="#"
+                       @click.prevent="addToCart(product.id)"
+                       v-if="btnVisible == 0">
+                        Add to cart
+                    </a>
+
+                    <a class="pdf btn-download" href="./ContactUs.html"
+                       v-if="btnVisible == 1">
+                        Go to cart
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer-top">
+            <ul class="footer-nav">
+                <li>Profile</li>
+                <li>Management</li>
+                <li>Products</li>
+                <li>R&D</li>
+                <li>Links</li>
+                <li>Sitemap</li>
+                <li>Contact</li>
+            </ul>
+            <div class="footer-social">
+                <img src="./imgs/icons/Ico_in.png" alt="LinkedIn">
+                <img src="./imgs/icons/Ico_inst.png" alt="Instagram">
+                <img src="./imgs/icons/Ico_tube.png" alt="YouTube">
+                <img src="./imgs/icons/Ico_tw.png" alt="Twitter">
+                <img src="./imgs/icons/Ico_fb.png" alt="Facebook">
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>AGRIDERA SEEDS & AGRICULTURE LTD. © 2020</p>
+    </div>
+</footer>
+
+<script>
+    const burgerBtn = document.getElementById('burgerBtn');
+    const navMenu = document.getElementById('navMenu');
+
+    burgerBtn.addEventListener('click', function() {
+        navMenu.classList.toggle('open');
+    });
+
+    const menuLinks = navMenu.querySelectorAll('a');
+    menuLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('open');
+        });
+    });
+</script>
+<script src="./js/main.js"></script>
+</body>
+</html>
